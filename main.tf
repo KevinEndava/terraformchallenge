@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  
+  credentials = file("ultimate-ascent-321720-059cfb4a5c2c.json")
 
   project = "ultimate-ascent-321720"
   region  = var.region
