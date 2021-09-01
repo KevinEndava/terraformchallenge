@@ -7,13 +7,13 @@ terraform {
   }
 }
 
-provider "google" {
-  credentials = file("ultimate-ascent-321720-059cfb4a5c2c.json")
+# provider "google" {
+#   credentials = file("ultimate-ascent-321720-059cfb4a5c2c.json")
 
-  project = "ultimate-ascent-321720"
-  region  = var.region
-  zone    = var.zone
-}
+#   project = "ultimate-ascent-321720"
+#   region  = var.region
+#   zone    = var.zone
+# }
 //create the VPC
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
