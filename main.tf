@@ -7,20 +7,22 @@ terraform {
   }
 }
 
-# provider "google" {
-#   credentials = file("ultimate-ascent-321720-059cfb4a5c2c.json")
+provider "google" {
+  
 
-#   project = "ultimate-ascent-321720"
-#   region  = var.region
-#   zone    = var.zone
-# }
+  project = "ultimate-ascent-321720"
+  region  = var.region
+  zone    = var.zone
+}
 //create the VPC
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
   auto_create_subnetworks = "true"
+  project = "ultimate-ascent-321720"
 
 }// Create Subnet
 resource "google_compute_subnetwork" "subnet1" {
+  project = "ultimate-ascent-321720"  
   name          = "subnet1"
   ip_cidr_range = "10.0.3.0/24"
   network       = "terraform-network"
